@@ -37,7 +37,7 @@
                 ;; change frame font with set-frame-font'
                 ;; list all font by eval-expression' (C-x C-e) the following
                 ;;   (print (font-family-list))
-                (font . "Ubuntu Mono-12"))))
+                (font . "Ubuntu Mono-14"))))
 
 ;; my custom window behavoir
 (scroll-bar-mode -1) ;; remove scroll bar
@@ -83,7 +83,7 @@
   (interactive)
   (defun split-window-6x100-helper (w)
     "Helper function to split a given window into 6 sub-windows."
-    (split-window (split-window (split-window (split-window (split-window (split-window w 120 t) 120 t) 120 t) 120 t) 120 t) 120 t))
+    (split-window (split-window (split-window (split-window (split-window (split-window w 128 t) 128 t) 128 t) 128 t) 128 t) 128 t))
   (split-window-6x100-helper nil))
 
 ;; split frame into 3 windows of ~100 columns
@@ -174,23 +174,6 @@
 (autoload 'tex-mode-flyspell-verify "flyspell" "" t)
 (add-hook 'text-mode-hook (lambda() (flyspell-mode 1)))
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
-
-;; my life is organized by emacs
-(require 'org)
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-(setq org-startup-indented t) ;; use clean indentation for org files
-(setq org-startup-truncated nil) ;; wrap long lines
-(setq org-todo-keywords
-      '((sequence "TODO(t)" "STARTED(s!)" "WAITING(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")))
-(setq org-todo-keyword-faces
-      '(("TODO" . "red")
-        ("STARTED" . "yellow")
-        ("WAITING" . "dark red")
-        ("DONE" . "blue")
-        ("CANCELED" . "purple")))
-(require 'ob-lisp) ;; allow execution of emacs lisp code
-(require 'ob-org) ;; allow execution of org code
-(require 'ob-sh) ;; allow execution of shell scripts
 
  ;; cscope is currently only available on linux
 (require 'xcscope)
@@ -333,3 +316,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'erase-buffer 'disabled nil)

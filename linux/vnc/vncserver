@@ -22,7 +22,7 @@ DISPLAYS="1"
 DEPTH="24"
 
 # Common Video Resolutions
-sizes="640x480" # VGA, lowest allowed resolution
+sizes="7680x2160" # 
 sizes="${sizes},768x576" # PAL
 sizes="${sizes},800x600" # SVGA
 sizes="${sizes},1024x768" # XGA
